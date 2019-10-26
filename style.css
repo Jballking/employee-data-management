@@ -1,4 +1,18 @@
-.employee-form{
+.jumbotron{
     background-color: black;
     color: white;
+}
+
+.card-header {
+    background-color: lightgrey;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.card{
+    border-radius: 6px;
+}
+input {
+    width: 90vw;
+    border-radius: 3px;
 }
