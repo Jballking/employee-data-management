@@ -1,5 +1,5 @@
 // Initialize Firebase -- change this to our database
-var config = {
+var firebaseConfig = {
     apiKey: "AIzaSyBQo-4cYgqFXIY6GqQQ4u3P0d7qunvk08g",
     authDomain: "employee-database-4fc9f.firebaseapp.com",
     databaseURL: "https://employee-database-4fc9f.firebaseio.com",
@@ -8,7 +8,8 @@ var config = {
     messagingSenderId: "852816851571",
     appId: "1:852816851571:web:be32a8a3574d245ef47006"
   };
- firebase.initializeApp(config);
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
  // Create a variable to reference the database.
  var database = firebase.database();
  // Initial Values
@@ -17,13 +18,14 @@ var config = {
  var started = 0;
  var rate = 0;
  // Capture Button Click
- $("#add-employee").on("click", function(event) {
+ $("form").on("click", "#add-employee", function(event) {
    event.preventDefault();
    // Grabbed values from text boxes
    name = $("#employee-name").val().trim();
    role = $("#employee-role").val().trim();
    started = $("#date-started").val().trim();
    rate = $("#monthly-rate").val().trim();
+   console.log("Employee Name: ", name, "Role: ", role, "Start Date: ",  started, "Rate: ", rate);
    // Code for handling the push
    database.ref().push({
      name: name,
@@ -38,7 +40,7 @@ var config = {
  database.ref().on("child_added", function(snapshot) {
     // storing the snapshot.val() in a variable for convenience
     var sv = snapshot.val();
-    // Console.loging the last user's data
+    // Console.logging the last user's data
     console.log(sv.name);
     console.log(sv.role);
     console.log(sv.started);
