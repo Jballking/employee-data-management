@@ -5,19 +5,9 @@
 
 .card-header {
     background-color: lightgrey;
-    border-radius: 6px;
-    margin: 0 auto;
 }
 
-.card{
-    border-radius: 6px;
-}
 input {
-    width: 90vw;
+    /* width: 90vw; */
     border-radius: 3px;
-}
-.card-body {
-    border-radius: 6px;
-    border-color: grey;
-    border-style: solid;
 }
