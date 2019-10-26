@@ -16,3 +16,8 @@ input {
     width: 90vw;
     border-radius: 3px;
 }
+.card-body {
+    border-radius: 6px;
+    border-color: grey;
+    border-style: solid;
+}
